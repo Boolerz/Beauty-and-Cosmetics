@@ -3,64 +3,52 @@
 // You can use libraries like jQuery for more complex interactions
 // This example is intentionally left blank for simplicity
 
-let products = [
-    { id: 1, name: 'Product 1', price: 29.99, image: 'product1.jpg' },
-    { id: 2, name: 'Product 2', price: 19.99, image: 'product2.jpg' },
-    // Add more products here
-];
-
+// Function to add item to cart
 let cart = [];
+let totalPrice = 0;
 
-// Display products on the page
-function displayProducts() {
-    const productsContainer = document.getElementById('products');
-
-    products.forEach(product => {
-        const productElement = document.createElement('div');
-        productElement.classList.add('product');
-
-        productElement.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <h3>${product.name}</h3>
-            <p>$${product.price.toFixed(2)}</p>
-            <button onclick="addToCart(${product.id})">Add to Cart</button>
-        `;
-
-        productsContainer.appendChild(productElement);
-    });
+// Function to add item to cart with price
+function addToCartWithPrice(name, price) {
+    const item = { name: name, price: price };
+    cart.push(item);
+    totalPrice += price;
+    updateCart();
 }
 
-// Add product to cart
-function addToCart(productId) {
-    const product = products.find(p => p.id === productId);
-    if (product) {
-        cart.push(product);
-        updateCart();
-    }
-}
-
-// Update cart display
+// Function to update cart display
 function updateCart() {
     const cartItemsElement = document.getElementById('cart-items');
     cartItemsElement.innerHTML = '';
 
-    let total = 0;
     cart.forEach(item => {
         const li = document.createElement('li');
         li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
         cartItemsElement.appendChild(li);
-        total += item.price;
     });
 
-    document.getElementById('cart-total').textContent = total.toFixed(2);
+    document.getElementById('cart-total').textContent = totalPrice.toFixed(2);
 }
 
-// Checkout function
+// Function to handle checkout
 function checkout() {
-    alert('Thank you for your purchase!');
-    cart = [];
-    updateCart();
+    if (cart.length > 0) {
+        alert(`Thank you for your purchase!\nTotal: $${totalPrice.toFixed(2)}`);
+        cart = [];
+        totalPrice = 0;
+        updateCart();
+    } else {
+        alert('Your cart is empty. Please add items before checking out.');
+    }
 }
 
-// Call displayProducts when the page is loaded
-window.onload = displayProducts;
+// Attach event listeners to "Add to Cart" buttons for each product
+document.addEventListener('DOMContentLoaded', function() {
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const productName = button.dataset.name;
+            const productPrice = parseFloat(button.dataset.price);
+            addToCartWithPrice(productName, productPrice);
+        });
+    });
+});
