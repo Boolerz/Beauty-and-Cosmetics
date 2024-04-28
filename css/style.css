@@ -70,8 +70,21 @@ footer {
     top: 0;
     right: 0;
     width: 100px;
-    background-color: #fff;
+    background-color: rgb(5, 84, 17);
     padding: 20px;
     box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
     height: 50px;
+}
+ span{
+    display: flex;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    right: 72px;
 }
