@@ -12,6 +12,13 @@ body {
     background-color: #f9f9f9;
     color: #333;
 }
+body.showCart .carttab{
+    inset: 0 0 0 auto;
+}
+body.showCart .container{
+    transform: translateX(-250px);
+}
+
 
 header {
     background-color:rgb(5, 84, 17);
@@ -42,6 +49,7 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 20px;
+    margin-top: 65px;
 }
 
 .product {
@@ -75,7 +83,7 @@ footer {
     box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
     height: 50px;
 }
- span{
+ .cart span{
     display: flex;
     background-color: red;
     width: 30px;
@@ -87,4 +95,78 @@ footer {
     position: absolute;
     top: 25%;
     right: 72px;
+}
+.product button{
+    background-color: #333;
+    color: #eee;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+
+}
+.carttab{
+    width: 400px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    inset: 0 -400px 0 auto;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transform: .5s;
+}
+.carttab h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+.carttab .btn{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+   
+}
+.carttab .btn Button{
+    background-color: rgb(255, 255, 0);
+    border: none;
+    font-family: Poppins;
+    font-weight: 500;
+    cursor: pointer;
+}
+.carttab .btn .Close{
+    background-color: white;
+    cursor: pointer;
+}
+.carttab .listCart .items .image{
+    width: 100%;
+    height: 10px;
+}
+.carttab .listCart .items{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+.listCart .quantity span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    color: #555;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.listCart .quantity span:nth-last-child(2){
+    background-color: transparent;
+    color:#eee;
+}
+.listCart .items:nth-child(even){
+    background-color: #eee1;
+}
+.listCart{
+    overflow: auto;
+}
+.listCart::-webkit-scrollbar{
+    width: 0;
 }
