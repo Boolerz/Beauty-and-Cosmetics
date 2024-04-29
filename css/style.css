@@ -137,9 +137,8 @@ footer {
     background-color: white;
     cursor: pointer;
 }
-.carttab .listCart .items .image{
+.carttab.items.img{
     width: 100%;
-    height: 10px;
 }
 .carttab .listCart .items{
     display: grid;

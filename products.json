@@ -1,0 +1,30 @@
+{
+    "products": [
+      {
+        "name": "Hydrating Face Mask",
+        "price": 10.00,
+        "description": "Removing excess oils from your skin and improving the appearance of your pores while hydrating your skin.",
+        "image": "images/hydrating-face-masks.jpg"
+      },
+      {
+        "name": "Hydrating Face Mask",
+        "price": 10.00,
+        "description": "Removing excess oils from your skin and improving the appearance of your pores while hydrating your skin.",
+        "image": "images/hydrating-face-masks.jpg"
+      },
+      {
+        "name": "Hydrating Face Mask",
+        "price": 10.00,
+        "description": "Removing excess oils from your skin and improving the appearance of your pores while hydrating your skin.",
+        "image": "images/hydrating-face-masks.jpg"
+      },
+      {
+        "name": "Hydrating Face Mask",
+        "price": 10.00,
+        "description": "Removing excess oils from your skin and improving the appearance of your pores while hydrating your skin.",
+        "image": "images/hydrating-face-masks.jpg"
+      }
+     
+    ]
+  }
+  
